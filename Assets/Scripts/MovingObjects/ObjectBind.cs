@@ -11,20 +11,30 @@ namespace MovingObjects
         
         private void Awake()
         {
-            LevelReset.LevelRestartStarted += () =>
-            {
-                isReseting = true;
-                for (int i = 0; i < transform.childCount; i++)
-                {
-                    var child = transform.GetChild(i);
-                    child.SetParent(null);
-                }
-            };
+            LevelReset.LevelRestartStarted += OnLevelResetOnLevelRestartStarted;
 
-            LevelReset.LevelRestarted += () =>
+            LevelReset.LevelRestarted += OnLevelResetOnLevelRestarted;
+        }
+
+        private void OnDestroy()
+        {
+            LevelReset.LevelRestarted -= OnLevelResetOnLevelRestarted;
+            LevelReset.LevelRestartStarted -= OnLevelResetOnLevelRestartStarted;
+        }
+
+        private void OnLevelResetOnLevelRestarted()
+        {
+            isReseting = false;
+        }
+
+        private void OnLevelResetOnLevelRestartStarted()
+        {
+            isReseting = true;
+            for (int i = 0; i < transform.childCount; i++)
             {
-                isReseting = false;
-            };
+                var child = transform.GetChild(i);
+                child.SetParent(null);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)

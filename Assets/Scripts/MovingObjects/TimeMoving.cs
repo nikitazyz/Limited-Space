@@ -1,3 +1,4 @@
+using System;
 using LevelSystem;
 using UnityEngine;
 
@@ -19,8 +20,13 @@ namespace MovingObjects
 
         private void LevelResetOnLevelRestarted()
         {
-            _toOffset = false;
+            _toOffset = true;
             transform.position = _initialPosition;
+        }
+
+        private void OnDestroy()
+        {
+            LevelReset.LevelRestarted -= LevelResetOnLevelRestarted;
         }
 
         void Update()

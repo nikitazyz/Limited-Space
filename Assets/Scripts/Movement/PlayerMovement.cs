@@ -18,6 +18,7 @@ namespace Movement
         [SerializeField] private Cooldown _bufferJumpTime = new(0.2f);
         [SerializeField] private Cooldown _dashTime = new(0.5f);
         [SerializeField] private float _dashSpeed = 10;
+        [SerializeField] private float _floatingForce = 2.2f;
         
         private bool _canCoyoteJump;
         private float _initialDeceleration;
@@ -41,11 +42,6 @@ namespace Movement
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (_bufferJumpTime.Timer > 0 && Velocity.y <= 0 && OnGround && !IsDash)
-            {
-                JumpImpulse();
-                _bufferJumpTime.Stop();
-            }
 
             if (OnGround)
             {
@@ -56,10 +52,10 @@ namespace Movement
             {
                 _coyoteJumpTime.Start(this);
             }
-
+            
             if (IsFly && Velocity.y <= 0 && !OnGround)
             {
-                Rigidbody.AddForce(Vector2.up * -Physics2D.gravity * 2f, ForceMode2D.Force);
+                Rigidbody.AddForce(Vector2.up * -Physics2D.gravity * _floatingForce, ForceMode2D.Force);
             }
 
             if (IsDash)
@@ -71,6 +67,11 @@ namespace Movement
         protected override void Update()
         {
             base.Update();
+            if (_bufferJumpTime.Timer > 0 && Velocity.y <= 0 && OnGround && !IsDash)
+            {
+                JumpImpulse();
+                _bufferJumpTime.Stop();
+            }
             if (IsJump && OnGround && _jumpRequestCooldown.Timer == 0)
             {
                 IsJump = false;

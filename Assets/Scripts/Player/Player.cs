@@ -28,13 +28,7 @@ namespace Player
         private void Start()
         {
             _initialPosition = transform.position;
-            LevelReset.LevelRestarted += () =>
-            {
-                Jumps = LevelSettings.Settings.InitialJumps;
-                transform.position = _initialPosition;
-                IsDead = false;
-                _playerMovement.CanJump = true;
-            };
+            LevelReset.LevelRestarted += OnLevelResetOnLevelRestarted;
             _playerMovement.Jumped += () =>
             {
                 Jumps--;
@@ -47,6 +41,19 @@ namespace Player
             };
             Jumps = LevelSettings.Settings.InitialJumps;
             Debug.Log(Jumps);
+        }
+
+        private void OnLevelResetOnLevelRestarted()
+        {
+            Jumps = LevelSettings.Settings.InitialJumps;
+            transform.position = _initialPosition;
+            IsDead = false;
+            _playerMovement.CanJump = true;
+        }
+
+        private void OnDestroy()
+        {
+            LevelReset.LevelRestarted -= OnLevelResetOnLevelRestarted;
         }
 
         private void Update()

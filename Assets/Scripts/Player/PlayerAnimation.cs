@@ -23,7 +23,7 @@ namespace Player
         private void Update()
         {
             _animator.SetBool(Walk, Mathf.Abs(_player.Velocity.x) > 0.1f && Mathf.Abs(_player.ActualVelocity.x) > 0);
-            _animator.SetBool(Fly, Mathf.Abs(_player.Velocity.y) > 0);
+            _animator.SetBool(Fly, Mathf.Abs(_player.Velocity.y) > 0.1f);
         }
     }
 }

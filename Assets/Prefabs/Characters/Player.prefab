@@ -173,7 +173,7 @@ Transform:
   - {fileID: 7292067966258784959}
   - {fileID: 9177799138259835517}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4253165357382753410
 Rigidbody2D:
@@ -253,7 +253,7 @@ MonoBehaviour:
   MaxSpeed: 5
   Acceleration: 40
   Deceleration: 20
-  JumpForce: 12
+  JumpForce: 16
   GroundMask:
     serializedVersion: 2
     m_Bits: 1
@@ -261,7 +261,7 @@ MonoBehaviour:
   _jumpRequestCooldown:
     _time: 0.4
   _coyoteJumpTime:
-    _time: 0.1
+    _time: 0.05
   _bufferJumpTime:
     _time: 0.1
   _dashTime:

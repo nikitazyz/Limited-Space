@@ -7,25 +7,34 @@ namespace MovingObjects
     public class JumpMoving : MonoBehaviour
     {
         [SerializeField] private Vector2 _offset;
+        [SerializeField] private float _speed;
 
         private Vector3 _initialPosition;
-        private bool _isOffset;
 
-        public bool IsOffset
+        public bool IsOffset { get; private set; }
+
+        private void Update()
         {
-            get => _isOffset;
-            private set
-            {
-                _isOffset = value;
-                transform.position = _initialPosition + (Vector3)_offset * (_isOffset ? 1 : 0);
-            }
+            transform.position = Vector3.MoveTowards(transform.position,
+                _initialPosition + (Vector3)_offset * (IsOffset ? 1 : 0), _speed * Time.deltaTime);
         }
-        
+
         private void Awake()
         {
             _initialPosition = transform.position;
             Player.Player.Jumped += () => IsOffset = !IsOffset;
-            LevelReset.LevelRestarted += () => IsOffset = false;
+            LevelReset.LevelRestarted += OnLevelResetOnLevelRestarted;
+        }
+
+        private void OnLevelResetOnLevelRestarted()
+        {
+            IsOffset = false;
+            transform.position = _initialPosition;
+        }
+
+        private void OnDestroy()
+        {
+            LevelReset.LevelRestarted -= OnLevelResetOnLevelRestarted;
         }
 
         private void OnDrawGizmosSelected()
