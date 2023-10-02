@@ -8,9 +8,7 @@ namespace MovingObjects
         [SerializeField] private Vector2 _offset;
         [SerializeField] private float _speed;
         [SerializeField] private PlayerStandDetector _playerStandDetector;
-
-        private bool _isRiding;
-        private bool _toOffset = true;
+        
         private Vector3 _initialPosition;
         
         void Start()
@@ -21,7 +19,6 @@ namespace MovingObjects
 
         private void LevelResetOnLevelRestarted()
         {
-            _toOffset = true;
             transform.position = _initialPosition;
         }
 
@@ -32,26 +29,13 @@ namespace MovingObjects
         
         void Update()
         {
-            if (_playerStandDetector.IsStand)
-            {
-                _isRiding = true;
-            }
-
-            if (!_isRiding)
-            {
-                return;
-            }
             
-            if (_toOffset)
+            if (_playerStandDetector.IsStand)
             {
                 if (Vector3.Distance(transform.position, _initialPosition + (Vector3)_offset) > 0.05f)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, _initialPosition + (Vector3)_offset,
                         _speed * Time.deltaTime);
-                }
-                else
-                {
-                    _toOffset = false;
                 }
             }
             else
@@ -60,11 +44,6 @@ namespace MovingObjects
                 {
                     transform.position = Vector3.MoveTowards(transform.position, _initialPosition,
                         _speed * Time.deltaTime);
-                }
-                else
-                {
-                    _isRiding = false;
-                    _toOffset = true;
                 }
             }
         }

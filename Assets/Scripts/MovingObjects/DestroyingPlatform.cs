@@ -11,11 +11,14 @@ namespace MovingObjects
         [SerializeField] private float _returnTime;
         [SerializeField] private Collider2D _collider;
         [SerializeField] private PlayerStandDetector _playerStandDetector;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
 
         private Coroutine _coroutine;
+        private Color _color;
 
         private void Awake()
         {
+            _color = _spriteRenderer.color;
             LevelReset.LevelRestarted += LevelResetOnLevelRestarted;
         }
 
@@ -26,7 +29,14 @@ namespace MovingObjects
 
         private void LevelResetOnLevelRestarted()
         {
+            if (_coroutine == null)
+            {
+                return;
+            }
             StopCoroutine(_coroutine);
+            _coroutine = null;
+            _collider.enabled = true;
+            _spriteRenderer.color = _color;
         }
 
         private void Update()
@@ -41,9 +51,13 @@ namespace MovingObjects
         {
             yield return new WaitForSeconds(_time);
             _collider.enabled = false;
+            var newColor = _color;
+            newColor.a = 0.3f;
+            _spriteRenderer.color = newColor;
             yield return new WaitUntil(() => !_playerStandDetector.IsStand);
             yield return new WaitForSeconds(_returnTime);
             _collider.enabled = true;
+            _spriteRenderer.color = _color;
             _coroutine = null;
         }
     }

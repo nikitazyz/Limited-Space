@@ -13,7 +13,17 @@ namespace Player
 
         private Vector3 _initialPosition;
         private bool _isDead;
-        public int Jumps { get; set; }
+        private int _jumps;
+
+        public int Jumps
+        {
+            get => _jumps;
+            set
+            {
+                _jumps = value;
+                _playerMovement.CanJump = Jumps > 0;
+            }
+        }
 
         public bool IsDead
         {
@@ -33,10 +43,6 @@ namespace Player
             {
                 Jumps--;
                 Debug.Log(Jumps);
-                if (Jumps == 0)
-                {
-                    _playerMovement.CanJump = false;
-                }
                 Jumped?.Invoke();
             };
             Jumps = LevelSettings.Settings.InitialJumps;

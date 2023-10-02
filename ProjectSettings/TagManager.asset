@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3829131035
+    locked: 0
   - name: BackgroundTiles
     uniqueID: 584550919
     locked: 0
@@ -46,6 +49,12 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Family
+    uniqueID: 591476037
+    locked: 0
+  - name: Obstacles
+    uniqueID: 830858799
     locked: 0
   - name: Overlay
     uniqueID: 933776227

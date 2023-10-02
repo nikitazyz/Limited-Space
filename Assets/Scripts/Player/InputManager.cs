@@ -11,7 +11,7 @@ namespace Player
 
         public static bool GetJump()
         {
-            return Input.GetButtonDown("Jump");
+            return Input.GetKeyDown(KeyCode.Space);
         }
         
         public static bool GetFly()

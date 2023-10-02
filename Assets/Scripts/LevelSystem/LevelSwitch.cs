@@ -14,6 +14,8 @@ namespace LevelSystem
         public static LevelSwitch Instance => _instance;
         private bool _switching;
 
+        public bool Switching => _switching;
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         public static void LoadLevelSwitch()
         {
