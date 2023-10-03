@@ -4749,8 +4749,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: -0.70495, y: 7.0102, z: 0}
-    m_Extent: {x: 3.21775, y: 7.9823003, z: 0}
+    m_Center: {x: -0.7052001, y: 7.00705, z: 0}
+    m_Extent: {x: 3.2224998, y: 7.9794497, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4831,8 +4831,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: -0.17805004, y: 8.078899, z: 0}
-    m_Extent: {x: 2.70505, y: 9.0583, z: 0}
+    m_Center: {x: -0.19325006, y: 8.07765, z: 0}
+    m_Extent: {x: 2.7042499, y: 9.04845, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6181,8 +6181,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: -1.6334, y: 8.9262, z: 0}
-    m_Extent: {x: 3.1205, y: 9.944301, z: 0}
+    m_Center: {x: -1.6324499, y: 8.92695, z: 0}
+    m_Extent: {x: 3.11955, y: 9.95895, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -19898,6 +19898,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 13832555909221251, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 13832555909221251, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13832555909221251, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13832555909221251, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 484118052358745450, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -20451,8 +20467,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: -0.6579499, y: 8.97775, z: 0}
-    m_Extent: {x: 4.71385, y: 10.00365, z: 0}
+    m_Center: {x: -0.6510501, y: 8.9708, z: 0}
+    m_Extent: {x: 4.71315, y: 10.002399, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
