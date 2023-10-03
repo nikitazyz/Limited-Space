@@ -14242,6 +14242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestroyingPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5387819662381391548, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
+      propertyPath: _time
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14367,6 +14371,10 @@ PrefabInstance:
     - target: {fileID: 4435613481383969500, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
       propertyPath: m_Name
       value: DestroyingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387819662381391548, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
+      propertyPath: _time
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14602,6 +14610,10 @@ PrefabInstance:
     - target: {fileID: 4435613481383969500, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
       propertyPath: m_Name
       value: DestroyingPlatform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387819662381391548, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
+      propertyPath: _time
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

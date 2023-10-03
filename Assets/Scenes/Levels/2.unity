@@ -180,6 +180,10 @@ PrefabInstance:
       value: DestroyingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 5387819662381391548, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
+      propertyPath: _time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387819662381391548, guid: d07d506dfc3e488498867910cbe7a04d, type: 3}
       propertyPath: _spriteRenderer
       value: 
       objectReference: {fileID: 2036821360}
@@ -281,6 +285,14 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1107497059}
+    - target: {fileID: 1264105437965470017, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 69.70001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264105437965470017, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2072917540886643033, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -341,6 +353,10 @@ PrefabInstance:
       propertyPath: _levelSettings
       value: 
       objectReference: {fileID: 11400000, guid: ca472423c16d7804a9329b8f10594223, type: 2}
+    - target: {fileID: 3906681841163089492, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -58.799988
+      objectReference: {fileID: 0}
     - target: {fileID: 5536487818799442889, guid: c0fa100951e81964ca03445a5b1d62a2, type: 3}
       propertyPath: _player
       value: 
